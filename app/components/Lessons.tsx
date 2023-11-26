@@ -80,7 +80,7 @@ export default function Lessons() {
            
           lessons.map((val:Lesson, i) => (
             <tr onMouseEnter={() => changeIndex(i)} onMouseLeave={() => changeIndex('')} key={i} className={`border-[#b4b9ca] border-b-[1px] hover:bg-[#ECEEF5] text-[10px] lg:text-[16px]`}>
-              <td className='px-[8px] lg:px-4 py-2'>{val.id.slice(0,3)}</td>
+              <td className='px-[8px] lg:px-4 py-2'>{val.id.slice(0,4)}</td>
               <td className='px-[8px] lg:px-4 py-2'>
                 <Image className='max-w-[22px] max-h-[22px] lg:max-w-[113px] lg:max-h-[63px]' src={val.coverImage} width={113} height={63} alt={''} />
               </td>
