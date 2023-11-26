@@ -16,21 +16,14 @@ export default function Notes() {
     const {setOpen} = openMenu()
     const {classes, setClass, setId, id} = useStore()
     
-    
-
-
     const retrieveClass = async () => {
         const response = await axios.get('https://api-test-f4ae.up.railway.app/v1/classes/groups')
         
         return response.data.data
     }
     
-    
-   
     const {
         data: data,
-        error,
-        isLoading,
 
     } = useQuery<Class[]>({queryKey: ['classes', classes], queryFn: () => retrieveClass(), })
        
@@ -42,14 +35,6 @@ export default function Notes() {
        
     }, [data])
 
-   
-
-
-    
-
-    
-    
-   
 
   return (
     <>
@@ -63,7 +48,7 @@ export default function Notes() {
         <div className='flex flex-wrap items-center'>
 
             <div className='relative mt-3 lg:mt-3 '>
-                <select onChange={(e) => setId(e.target.value)} value={id} className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] lg:ml-3  flex px-3 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
+                <select onChange={(e) => setId(e.target.value)} value={id} className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] lg:ml-3  flex px-3 py-[0.7rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
                     <Suspense fallback='loading'>
                         {classes !== undefined && classes.map((val:Class) => (
                         <option className='font-bold'  key={val._id} value={val._id}>{val.name}</option>
@@ -77,7 +62,7 @@ export default function Notes() {
 
 
             <div className='relative mt-3 lg:mt-3 '>
-                <select className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] ml-3 flex px-3 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
+                <select className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] ml-3 flex px-3 py-[0.7rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
                     <option value='first'>1st term</option>
                     <option value='second'>2nd term</option>
                     <option value='third'>3rd term</option>
@@ -88,14 +73,14 @@ export default function Notes() {
             </div>
             
 
-            <div className='bg-white flex px-3 py-[0.8rem] ml-3 mr-3 lg:mr-auto mt-3 lg:mt-3  rounded-[15px] items-center border border-[#191C2D]'>
+            <div className='bg-white flex px-3 py-[0.7rem] ml-3 mr-3 lg:mr-auto mt-3 lg:mt-3  rounded-[15px] items-center border border-[#191C2D]'>
                 <Image className='mr-[0.7rem]' src={search} width={16} height={16} alt ='icon of a magnifying glass'/>
                 <input className='text-[14px] placeholder-gray-600 focus:outline-none ' type="text" placeholder='Search'/>
 
             </div>
 
-            <div className='flex bg-[#7CF5B2] lg:ml-3 mt-3 lg:mt-3 px-6 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D]'>
-                <span className='text-[#191C2D] text-lg font-bold mr-4'>Create note</span>
+            <div className='flex bg-[#7CF5B2] lg:ml-3 mt-3 lg:mt-3 px-5 py-[0.6rem] rounded-[15px] items-center border border-[#191C2D]'>
+                <span className='text-[#191C2D] text-lg font-extrabold mr-4'>Create note</span>
                 <Image src={cross} width={16} height={16} alt ='icon of a plus sign'/>
             </div>
 

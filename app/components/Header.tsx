@@ -4,7 +4,6 @@ import note from "../../public/header/note-icon.svg"
 import user from "../../public/header/user.svg"
 import chevron from "../../public/header/chevron.svg"
 
-
 export default function Header() {
   return (
     <header className='flex justify-between items-center p-[1rem] lg:p-[1.5rem] border-b-2 border-[#64666c] '>

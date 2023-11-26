@@ -21,9 +21,8 @@ export default function Subjects() {
     
     const {
       data,
-      error,
       isLoading,
-     // refetch
+     
       } = useQuery({queryKey: ["subjects", id], queryFn: () => retrieveSubjects() })
       
     
