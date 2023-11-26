@@ -70,7 +70,7 @@ export default function Subjects() {
             </tr>
              : 
              <tr >
-             <td className='bg-[#eceef5] text-[14px] lg:text-base  cursor-pointer pl-4 py-3 w-screen lg:w-[300px]'>No subjects</td>
+             <td className='bg-[#eceef5] text-[14px] lg:text-base  cursor-pointer pl-4 py-3 w-screen lg:w-[300px]'>null</td>
            </tr>
 
           }

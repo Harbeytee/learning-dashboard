@@ -12,7 +12,7 @@ import { Lesson } from '../types'
 export default function Lessons() {
   
 
-    const {subjectId, setLessons, lessons, id, subjects, classes} = useStore()
+    const {subjectId, setLessons, lessons, subjects,} = useStore()
     const { index, changeIndex } = hoverStore()
   
 
@@ -54,7 +54,6 @@ export default function Lessons() {
       function toCapital(string:string) {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
       }
-      //console.log(toCapital('The bOy is haPPy'))
       
       if(error) console.log('an error occured')
   

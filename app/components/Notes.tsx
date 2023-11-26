@@ -1,5 +1,5 @@
 'use client'
-import React, { ChangeEvent, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import Image from 'next/image'
 import search from '../../public/Notes/search.svg'
 import cross from '../../public/Notes/cross.svg'
@@ -13,7 +13,7 @@ import { Class } from '../types'
 
 export default function Notes() {
 
-    const {open, setOpen} = openMenu()
+    const {setOpen} = openMenu()
     const {classes, setClass, setId, id} = useStore()
     
     
@@ -22,14 +22,9 @@ export default function Notes() {
     const retrieveClass = async () => {
         const response = await axios.get('https://api-test-f4ae.up.railway.app/v1/classes/groups')
         
-        //console.log(response.data.data)
         return response.data.data
     }
     
-    // const prefetchClass = async () => {
-    //     await queryClient.prefetchQuery({queryKey: ['classes', classes], queryFn: () => retrieveClass})
-    // }
-
     
    
     const {
