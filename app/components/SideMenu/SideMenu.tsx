@@ -6,11 +6,11 @@ import Videos from './icons/Videos'
 import Class from './icons/Class'
 import Subject from './icons/Subject'
 import { useStore } from '../../store/zustand'
-// import { FC } from 'react'
+import { openMenu } from '../../store/sideMenuStore'
 
 
 export default function SideMenu() {
-    
+    const { open } = openMenu()
     
 
     const {index, changeIndex} = useStore()
@@ -18,7 +18,7 @@ export default function SideMenu() {
 
 
   return (
-    <nav className='bg-[#292a2f] w-3/5 max-w-[240px] py-8 px-[1.2rem] hidden lg:block'>
+    <nav className={`transition-all bg-[#292a2f] ${ open ? 'translate-x-0' : '-translate-x-[100%]'} lg:translate-x-0 max-w-[240px] py-8 px-[1.2rem] fixed lg:relative z-50 top-0`}>
         <div onClick={() => changeIndex(1)} className={`flex mb-7 p-[0.6rem] cursor-pointer ${index == 1 ? 'bg-[#7CF5B2] rounded-[10px]' : ''}`}>
             <Dashboard stroke={index == 1 ? '#191C2D' : '#ECEEF5'}/>
             <span className={`${index == 1 ? 'text-[#191C2D]' : 'text-white'} text-lg ml-4 font-semibold`}>Dashboard</span>

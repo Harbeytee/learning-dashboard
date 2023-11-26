@@ -5,18 +5,17 @@ import search from '../../public/Notes/search.svg'
 import cross from '../../public/Notes/cross.svg'
 import chevron from '../../public/header/chevron.svg'
 import { useStore } from '../store/zustand'
-
+import { openMenu } from '../store/sideMenuStore'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { Suspense } from 'react'
-import { useQueryClient } from '@tanstack/react-query'
 import { Class } from '../types'
 
 export default function Notes() {
 
-   
+    const {open, setOpen} = openMenu()
     const {classes, setClass, setId, id} = useStore()
-    const queryClient = useQueryClient()
+    
     
 
 
@@ -49,7 +48,9 @@ export default function Notes() {
     }, [data])
 
    
-
+    React.useEffect(() => {
+        console.log(open)
+    }, [open])
 
 
     
@@ -59,6 +60,12 @@ export default function Notes() {
    
 
   return (
+    <>
+    <div onClick={setOpen} className='fixed top-[5px] left-[5px] z-[100] flex flex-col'>
+        <span className='w-[30px] h-[3px] block bg-green-600 mt-[0.3rem]'></span>
+        <span className='w-[30px] h-[3px] block bg-green-600 mt-[0.3rem]'></span>
+        
+    </div>
     <div className='flex flex-wrap w-full justify-between items-center w-full p-6 py-5 bg-[#F6F6F6] border border-[#4E5058] mb-8 lg:mb-auto'>
         <div className='font-extrabold text-[18px] lg:text-[33px]'>Notes</div>
         <div className='flex flex-wrap items-center'>
@@ -103,5 +110,6 @@ export default function Notes() {
         </div>
         
     </div>
+    </>
   )
 }
