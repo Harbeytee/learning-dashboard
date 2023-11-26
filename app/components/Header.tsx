@@ -16,7 +16,7 @@ export default function Header() {
 
         <div className='flex items-center'>
             <Image src={user} width={40} height={40} alt={'display picture of user'}/>
-            <span className='ml-[0.5rem] mr-[1rem] lg:text-lg font-normal'>Joshua</span>
+            <span className='ml-[0.5rem] mr-[1rem] lg:text-lg font-normal text-[18px]'>Joshua</span>
             <Image src={chevron} width={15} height={15} alt={'icon for dropdown'}/>
         
         </div>

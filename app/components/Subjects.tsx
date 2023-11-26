@@ -60,7 +60,7 @@ export default function Subjects() {
             !isLoading?
           subjects.map((val:Subject) =>(
               <tr key={val._id} >
-                <td onClick={(e) => changeSubjectId(val._id)} className={`hover:bg-[#fff] ${val._id == subjectId?  '!bg-[#45CD81] font-semibold' : 'bg-[#eceef5] font-normal'} text-[14px] lg:text-base  cursor-pointer pl-4 py-5 w-screen lg:w-[300px]`}>{val.name}</td>
+                <td onClick={(e) => changeSubjectId(val._id)} className={`hover:bg-[#fff] ${val._id == subjectId?  '!bg-[#45CD81] font-bold' : 'bg-[#eceef5] font-normal'} text-[16px] lg:text-base  cursor-pointer pl-5 py-5 w-screen lg:w-[300px]`}>{val.name}</td>
               </tr>
           ))
          

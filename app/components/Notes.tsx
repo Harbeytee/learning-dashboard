@@ -71,7 +71,7 @@ export default function Notes() {
                 <select onChange={(e) => setId(e.target.value)} value={id} className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] lg:ml-3  flex px-3 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
                     <Suspense fallback='loading'>
                         {classes !== undefined && classes.map((val:Class) => (
-                        <option  key={val._id} value={val._id}>{val.name}</option>
+                        <option className='font-bold'  key={val._id} value={val._id}>{val.name}</option>
                         ))}
                     </Suspense>
                     
@@ -88,14 +88,14 @@ export default function Notes() {
                     <option value='third'>3rd term</option>
                     
                 </select>
-                {/* w-[20px] h-[20px] */}
+               
                 <Image className='transform rotate-90 bg-trasparent absolute right-[6.5px] top-[30%] w-[20px] h-[20px]' src={chevron} width={20} height={20} alt ='icon of a dropdown chevron'/>
             </div>
             
 
             <div className='bg-white flex px-3 py-[0.8rem] ml-3 mr-3 lg:mr-auto mt-3 lg:mt-3  rounded-[15px] items-center border border-[#191C2D]'>
                 <Image className='mr-[0.7rem]' src={search} width={16} height={16} alt ='icon of a magnifying glass'/>
-                <input className='placeholder-gray-500 focus:outline-none ' type="text" placeholder='Search'/>
+                <input className='text-[14px] placeholder-gray-600 focus:outline-none ' type="text" placeholder='Search'/>
 
             </div>
 
