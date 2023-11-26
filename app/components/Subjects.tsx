@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
-import { useStore } from '../store/zustand'
+import { useStore } from '../store/appStore'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { Subject } from '../types'
@@ -46,7 +46,7 @@ export default function Subjects() {
     
   return (
     <table className='w-screen lg:w-[28%] lg:max-w-[279px] flex flex-col bg-[#eceef5]'>
-      <thead className='w-full border-[#4e5058] border-b-4 px-4 lg:py-3 pb-6 lg:pb-3 text-lg text-[#191C2D] font-bold'>
+      <thead className='w-full border-[#4e5058] border-b-4 px-4 lg:py-3 pb-4 lg:pb-3 text-lg text-[#191C2D] font-bold'>
         <tr >
           <th>Subjects</th>
         </tr>

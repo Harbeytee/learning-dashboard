@@ -6,7 +6,7 @@ import Lessons from './components/Lessons'
 
 export default function Home() {
   return (
-    <main className=''>
+    <main className='h-full'>
       <Header />
       <div className='flex w-full h-full'>
         <SideMenu />

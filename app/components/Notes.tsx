@@ -4,7 +4,7 @@ import Image from 'next/image'
 import search from '../../public/Notes/search.svg'
 import cross from '../../public/Notes/cross.svg'
 import chevron from '../../public/header/chevron.svg'
-import { useStore } from '../store/zustand'
+import { useStore } from '../store/appStore'
 import { openMenu } from '../store/sideMenuStore'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
@@ -48,9 +48,6 @@ export default function Notes() {
     }, [data])
 
    
-    React.useEffect(() => {
-        console.log(open)
-    }, [open])
 
 
     
@@ -61,7 +58,7 @@ export default function Notes() {
 
   return (
     <>
-    <div onClick={setOpen} className='fixed top-[5px] left-[5px] z-[100] flex flex-col'>
+    <div onClick={setOpen} className='fixed top-[5px] left-[5px] z-[100] flex flex-col lg:hidden'>
         <span className='w-[30px] h-[3px] block bg-green-600 mt-[0.3rem]'></span>
         <span className='w-[30px] h-[3px] block bg-green-600 mt-[0.3rem]'></span>
         
@@ -71,7 +68,7 @@ export default function Notes() {
         <div className='flex flex-wrap items-center'>
 
             <div className='relative mt-3 lg:mt-3 '>
-                <select onChange={(e) => setId(e.target.value)} value={id} className='appearance-none text-base bg-white font-bold text-[#191C2D] lg:ml-3  flex px-3 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
+                <select onChange={(e) => setId(e.target.value)} value={id} className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] lg:ml-3  flex px-3 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
                     <Suspense fallback='loading'>
                         {classes !== undefined && classes.map((val:Class) => (
                         <option  key={val._id} value={val._id}>{val.name}</option>
@@ -85,14 +82,14 @@ export default function Notes() {
 
 
             <div className='relative mt-3 lg:mt-3 '>
-                <select className='appearance-none text-base bg-white font-bold text-[#191C2D] ml-3 flex px-3 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
+                <select className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] ml-3 flex px-3 py-[0.8rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
                     <option value='first'>1st term</option>
                     <option value='second'>2nd term</option>
                     <option value='third'>3rd term</option>
                     
                 </select>
                 {/* w-[20px] h-[20px] */}
-                <Image className='bg-transparent transform rotate-90 bg-white absolute right-[6.5px] top-[30%]  ' src={chevron} width={20} height={20} alt ='icon of a dropdown chevron'/>
+                <Image className='transform rotate-90 bg-trasparent absolute right-[6.5px] top-[30%] w-[20px] h-[20px]' src={chevron} width={20} height={20} alt ='icon of a dropdown chevron'/>
             </div>
             
 
