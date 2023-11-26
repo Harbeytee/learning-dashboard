@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import { useStore } from '../store/appStore'
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { Subject } from '../types'
 export default function Subjects() {
@@ -25,9 +25,6 @@ export default function Subjects() {
      
       } = useQuery({queryKey: ["subjects", id], queryFn: () => retrieveSubjects() })
       
-    
-    
-
     useEffect(() => {
       
      

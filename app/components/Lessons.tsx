@@ -78,7 +78,7 @@ export default function Lessons() {
               </td>
               <td className='px-[8px] lg:px-4 py-2 '>{toCapital(val.topic)}</td>
               <td className='px-[8px] lg:px-4 py-2 text-center'>{val.viewed}</td>
-              <td className={`px-[8px] lg:px-4 py-2 flex justify-center lg:justify-normal mr-4 mt-[2px] lg:mr-24 lg:mt-4 visible ${index === i ? 'lg:visible' : 'lg:invisible'}`}>
+              <td className={`px-[8px] lg:px-4 py-2 flex justify-center lg:justify-normal mr-4 mt-[2px] lg:mr-24 lg:mt-2 visible ${index === i ? 'lg:visible' : 'lg:invisible'}`}>
                 <Image className='mr-[0.3rem] cursor-pointer w-[15px] h-[15px] lg:w-[35px] lg:h-[35px]' src={eye} width={15} height={15} alt={'icon of a eye'}/>
                 <Image className='mr-[0.3rem] cursor-pointer w-[15px] h-[15px] lg:w-[35px] lg:h-[35px]' src={pencil} width={15} height={15} alt={'icon of a pencil'}/>
                 <Image className='mr-[0.3rem] cursor-pointerw-[15px] h-[15px] lg:w-[35px] lg:h-[35px]' src={deletes} width={15} height={15} alt={'icon of a trash can'}/>
