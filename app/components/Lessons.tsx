@@ -66,7 +66,7 @@ export default function Lessons() {
         </tr>
 
       </thead>
-      <tbody className={`${andika.className}`}>
+      <tbody className={`${andika.className} relative`}>
         
         {
          
@@ -79,7 +79,7 @@ export default function Lessons() {
               <td className='px-[8px] lg:px-4 py-2'>{val.id.slice(0,4)}</td>
               <td className='px-[8px] lg:px-4 py-2 '>
                 <div className=' border border-[1px] border-[#4e5058] rounded-[15px] max-w-[92px] lg:max-w-[113px] max-h-[53px]'>
-                  <Image className='mx-auto max-w-[22px] max-h-[22px] lg:max-w-[113px] lg:max-h-[53px]' src={val.coverImage} width={113} height={63} alt={''} />
+                  <Image className='mx-auto max-w-[22px] max-h-[22px]  w-[113px] h-[53px] lg:max-w-[113px] lg:max-h-[53px]' src={val.coverImage} width={113} height={63} alt={''} />
 
                 </div>
                 

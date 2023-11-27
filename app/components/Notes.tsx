@@ -55,7 +55,7 @@ export default function Notes() {
                     
                     
                 </select>
-                <Image className='transform rotate-90 bg-trasparent absolute right-[6.5px] top-[30%] ' src={chevron} width={20} height={20} alt={'icon of a dropdown chevron'}/>
+                <Image className='transform rotate-90 bg-trasparent absolute right-[6.5px] top-[30%] w-[20px] h-[20px]' src={chevron} width={20} height={20} alt={'icon of a dropdown chevron'}/>
             </div>
 
 
@@ -67,19 +67,19 @@ export default function Notes() {
                     
                 </select>
                
-                <Image className='transform rotate-90 bg-trasparent absolute right-[6.5px] top-[30%] ' src={chevron} width={20} height={20} alt={'icon of a dropdown chevron'}/>
+                <Image className='transform rotate-90 bg-trasparent absolute right-[6.5px] top-[30%] w-[20px] h-[20px]' src={chevron} width={20} height={20} alt={'icon of a dropdown chevron'}/>
             </div>
             
 
             <div className='bg-white flex px-3 py-[0.7rem] ml-3 mr-3 lg:mr-auto mt-3 lg:mt-3  rounded-[15px] items-center border border-[#191C2D]'>
-                <Image className='mr-[0.7rem]' src={search} width={16} height={16} alt={'icon of a magnifying glass'}/>
+                <Image className='mr-[0.7rem] w-[16px] h-[16px]' src={search} width={16} height={16} alt={'icon of a magnifying glass'}/>
                 <input className={` ${andika.className} text-[14px] placeholder-gray-600 focus:outline-none`} type="text" placeholder='Search'/>
 
             </div>
 
             <div className='flex bg-[#7CF5B2] lg:ml-3 mt-3 lg:mt-3 px-5 py-[0.6rem] rounded-[15px] items-center border border-[#191C2D]'>
                 <span className='text-[#191C2D] text-lg font-extrabold mr-4'>Create note</span>
-                <Image src={cross} width={16} height={16} alt={'icon of a plus sign'}/>
+                <Image className='w-[16px] h-[16px]' src={cross} width={16} height={16} alt={'icon of a plus sign'}/>
             </div>
 
         </div>
