@@ -9,7 +9,8 @@ import { openMenu } from '../store/sideMenuStore'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { Class } from '../types'
-
+import { Andika } from 'next/font/google'
+const andika = Andika({ subsets: ['latin'], weight: ['400' , '700']})
 export default function Notes() {
 
     const {setOpen} = openMenu()
@@ -39,10 +40,10 @@ export default function Notes() {
         <span className='w-[30px] h-[3px] block bg-green-600 mt-[0.3rem]'></span>
         
     </div>
-
+    
     <div className='flex flex-wrap w-full justify-between items-center w-full p-6 py-5 bg-[#F6F6F6] border border-[#4E5058] mb-8 lg:mb-auto'>
         <div className='font-extrabold text-[18px] lg:text-[33px]'>Notes</div>
-        <div className='flex flex-wrap items-center'>
+        <div className={`${andika.className} flex flex-wrap items-center`}>
 
             <div className='relative mt-3 lg:mt-3 '>
                 <select onChange={(e) => setId(e.target.value)} value={id} className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] lg:ml-3  flex px-3 py-[0.7rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
@@ -60,9 +61,9 @@ export default function Notes() {
 
             <div className='relative mt-3 lg:mt-3 '>
                 <select className='cursor-pointer appearance-none text-base bg-white font-bold text-[#191C2D] ml-3 flex px-3 py-[0.7rem] rounded-[15px] items-center border border-[#191C2D] focus:outline-none focus:bg-[#45CD81] pr-8' name="term" id="term">
-                    <option value='first'>1st term</option>
-                    <option value='second'>2nd term</option>
-                    <option value='third'>3rd term</option>
+                    <option value='first'>1st Term</option>
+                    <option value='second'>2nd Term</option>
+                    <option value='third'>3rd Term</option>
                     
                 </select>
                
@@ -72,7 +73,7 @@ export default function Notes() {
 
             <div className='bg-white flex px-3 py-[0.7rem] ml-3 mr-3 lg:mr-auto mt-3 lg:mt-3  rounded-[15px] items-center border border-[#191C2D]'>
                 <Image className='mr-[0.7rem]' src={search} width={16} height={16} alt={'icon of a magnifying glass'}/>
-                <input className='text-[14px] placeholder-gray-600 focus:outline-none ' type="text" placeholder='Search'/>
+                <input className={` ${andika.className} text-[14px] placeholder-gray-600 focus:outline-none`} type="text" placeholder='Search'/>
 
             </div>
 

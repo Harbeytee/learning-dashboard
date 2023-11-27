@@ -4,7 +4,9 @@ import { useStore } from '../store/appStore'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { Subject } from '../types'
-import { error } from 'console'
+import { Andika } from 'next/font/google'
+const andika = Andika({ subsets: ['latin'], weight: ['400' , '700']})
+
 export default function Subjects() {
   
 
@@ -24,7 +26,7 @@ export default function Subjects() {
     const {
       data,
       isLoading,
-      error
+      
       } = useQuery({queryKey: ["subjects", id], queryFn: () => retrieveSubjects() })
       
     useEffect(() => {
@@ -46,11 +48,11 @@ export default function Subjects() {
     <table className='w-screen lg:w-[28%] lg:max-w-[279px] flex flex-col bg-[#eceef5]'>
       <thead className='w-full border-[#4e5058] border-b-4 px-4 lg:py-3 pb-4 lg:pb-3 text-lg text-[#191C2D] font-bold'>
         <tr >
-          <th>Subjects</th>
+          <th className={`${andika.className}`}>Subjects</th>
         </tr>
 
       </thead>
-      <tbody className='bg-[#eceef5] text-[#191C2D] font-normal'>
+      <tbody className={` ${andika.className} bg-[#eceef5] text-[#191C2D] font-normal`}>
         
        
           {
