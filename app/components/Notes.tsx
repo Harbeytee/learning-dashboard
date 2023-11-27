@@ -29,11 +29,8 @@ export default function Notes() {
     useEffect(() => {
         data !== undefined && setClass(data) 
         data !== undefined && setId(data[0]._id) 
-        
-       
        
     }, [data])
-
 
   return (
     <>

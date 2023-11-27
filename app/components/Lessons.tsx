@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useStore } from '../store/appStore'
 import { useQuery } from '@tanstack/react-query'
@@ -10,15 +10,20 @@ import deletes from '../../public/lessons/delete.svg'
 import { hoverStore } from './store/hoverStore'
 import { Lesson } from '../types'
 export default function Lessons() {
+  const {subjectId, setLessons, lessons, subjects,} = useStore()
+  const { index, changeIndex } = hoverStore()
 
-    const {subjectId, setLessons, lessons, subjects,} = useStore()
-    const { index, changeIndex } = hoverStore()
+  
+  function toCapital(string:string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+  }
+  
     const retrieveLessons = async () => {
-        
-        const response = await axios.get(`https://api-test-f4ae.up.railway.app/v1/lessons/bysubject/${subjectId}`)
-        return response.data.data
-        
-    }
+         
+            const response = await axios.get(`https://api-test-f4ae.up.railway.app/v1/lessons/bysubject/${subjectId}`)
+            return response.data.data
+             }
+    
     
     const {
       data,
@@ -26,6 +31,7 @@ export default function Lessons() {
   
       } = useQuery({queryKey: ["lessons", subjectId], queryFn: () => retrieveLessons() })
 
+   
       React.useEffect(() => {
       
         if(data !== undefined ) {
@@ -40,11 +46,9 @@ export default function Lessons() {
        
       }, [data])
 
-
-      function toCapital(string:string) {
-        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
-      }
+    
       
+
   return (
     <table className='w-full text-left border-l border-[#191C2D]'>
       <thead>
@@ -106,4 +110,6 @@ export default function Lessons() {
     
     </table>
   )
+      
+
 }
